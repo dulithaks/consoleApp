@@ -1,0 +1,14 @@
+{
+    "name": "dulithaks/consoleapp",
+    "description": "Console application",
+    "authors": [
+        {
+            "name": "Dulitha Kumarasiri",
+            "email": "dulithaks@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"App\\": "app/"}
+    },
+    "require": {}
+}
