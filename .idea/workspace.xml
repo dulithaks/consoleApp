@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f537b8ea-645d-44a7-9650-4c5baebf0eb6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/consoleApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/consoleApp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/ConsoleMessages.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/ConsoleMessages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/challenge.php" beforeDir="false" afterPath="$PROJECT_DIR$/challenge.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-    </list>
+    <list default="true" id="f537b8ea-645d-44a7-9650-4c5baebf0eb6" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,12 +228,12 @@
       <option name="presentableId" value="Default" />
       <updated>1582907537187</updated>
       <workItem from="1582907538604" duration="9587000" />
-      <workItem from="1582917318192" duration="8393000" />
+      <workItem from="1582917318192" duration="8720000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17980000" />
+    <option name="totallyTimeSpent" value="18307000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -367,13 +360,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Console/Console.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
@@ -388,6 +374,13 @@
           <folding>
             <element signature="e#31#64#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
         </state>
       </provider>
     </entry>
