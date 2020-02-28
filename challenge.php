@@ -18,10 +18,11 @@ try {
 
     if ($mainChoice == 'viewList') {
         $consoleMessages->showSearchableFields();
+        $mainChoice = $console->waitingForSearchMenuInput();
     }
 
     if ($mainChoice == 'search') {
-        $mainChoice = $console->showLevelTwoMenu();
+        $mainChoice = $console->waitingForSearchMenuInput();
     }
 
     throw new InvalidInputException('Invalid input! Please try again....');
