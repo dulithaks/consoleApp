@@ -9,7 +9,6 @@ use App\Exception\InvalidSearchKeyException;
 $consoleMessages = new ConsoleMessages();
 $console = new Console();
 
-
 try {
     // Show initial message and get top level menu selection
     $consoleMessages->initMessage();
@@ -18,10 +17,12 @@ try {
 
     if ($mainChoice == 'viewList') {
         $consoleMessages->showSearchableFields();
+        $consoleMessages->showLevelTwoMenu();
         $mainChoice = $console->waitingForSearchMenuInput();
     }
 
     if ($mainChoice == 'search') {
+        $consoleMessages->showLevelTwoMenu();
         $mainChoice = $console->waitingForSearchMenuInput();
     }
 

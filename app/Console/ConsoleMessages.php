@@ -5,6 +5,7 @@ namespace App\Console;
 use App\Model\OrganizationsModel;
 use App\Model\TicketModel;
 use App\Model\UserModel;
+use LucidFrame\Console\ConsoleTable;
 
 class ConsoleMessages
 {
@@ -78,16 +79,17 @@ class ConsoleMessages
 
         echo PHP_EOL . PHP_EOL;
 
-        $mask = "|%20s | %20s | %20s |\n";
-        printf($mask, "USER FIELDS", "TICKETS FIELDS", "ORGANIZATION FIELDS");
-        echo PHP_EOL;
+        $table = new ConsoleTable();
+        $table->setHeaders(["USER FIELDS", "TICKETS FIELDS", "ORGANIZATION FIELDS"]);
         for ($i = 0; $i < $max; $i++) {
-            printf($mask,
+            $table->addRow([
                 $this->getSearchKey($userKeyList, $i),
                 $this->getSearchKey($ticketKeyList, $i),
-                $this->getSearchKey($organizationKeyList, $i));
+                $this->getSearchKey($organizationKeyList, $i)]);
         }
+        $table->setPadding(2)->display();
 
+        echo PHP_EOL . PHP_EOL;
     }
 
     private function getSearchKey($array, $i) {
