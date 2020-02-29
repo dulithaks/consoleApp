@@ -12,7 +12,6 @@ $console = new Console();
 $consoleMessages = new ConsoleMessages();
 
 
-
 try {
     // Show initial message and get top level menu selection
     $consoleMessages->initMessage();
@@ -23,19 +22,16 @@ try {
         $consoleMessages->showSearchableFields();
         $consoleMessages->showLevelTwoMenu();
         $mainChoice = $console->waitingForSearchMenuInput();
-    }
-
-    if ($mainChoice == 'search') {
+    } elseif ($mainChoice == 'search') {
         $consoleMessages->showLevelTwoMenu();
         $mainChoice = $console->waitingForSearchMenuInput();
+    } else {
+        throw new InvalidInputException('Invalid input! Please try again.');
     }
-
-    throw new InvalidInputException('Invalid input! Please try again....');
 
 } catch (InvalidSearchKeyException $ex) {
     $consoleMessages->showErrorMessage($ex->getMessage());
-}
-catch (InvalidInputException $ex) {
+} catch (InvalidInputException $ex) {
     $consoleMessages->showErrorMessage($ex->getMessage());
 } catch (Exception $ex) {
     $consoleMessages->showErrorMessage('Something went wrong! Please try again');

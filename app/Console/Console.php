@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Console;
+
 use App\Repository\UserRepository;
 
 class Console
@@ -23,15 +24,11 @@ class Console
         while (true) {
             $choice = trim(fgets(STDIN));
             if (intval($choice) === 1) {
-                $this->consoleMessages->showLevelTwoMenu();
                 $userSelection = 'search';
                 break;
             } elseif (intval($choice) === 2) {
                 $userSelection = 'viewList';
                 break;
-
-            } elseif (intval($choice) === 3) {
-
             } elseif ($choice == 'quit') {
                 $this->consoleMessages->quitMessage();
             } else {
@@ -58,12 +55,13 @@ class Console
             } elseif (intval($choice) === 2) {
                 $users = $userRepo->getUserInformation('_id', 1);
                 $this->consoleMessages->showUserSearchResult($users);
+                break;
             } elseif (intval($choice) === 3) {
 
             } else {
                 $this->consoleMessages->invalidInput();
             }
-            echo $choice . PHP_EOL . PHP_EOL;
+            echo PHP_EOL . PHP_EOL;
         }
     }
 }

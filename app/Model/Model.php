@@ -42,7 +42,7 @@ class Model
             if(array_key_exists($key, $this->arrayTypeSearch) && in_array($value, $item[$key])){
                 $items[] = $item;
             }
-            elseif ($item[$key] == $value) {
+            elseif (array_key_exists($key, $item) && $item[$key] == $value) {
                 $items[] = $item;
             }
         }
