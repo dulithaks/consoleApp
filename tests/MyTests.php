@@ -1,7 +1,6 @@
 <?php
 
 
-namespace Test;
 
 use PHPUnit\Framework\TestCase;
 
@@ -12,4 +11,3 @@ class MyTest extends TestCase
         $this->assertEquals(2, 1 + 1);
     }
 }
-?>
