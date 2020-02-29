@@ -68,6 +68,7 @@ class Console
                 $searchKeyVal = $this->waitingForSearchKeyValueInput();
                 $tickets = $organizationRepo->getOrganizationInformation($searchKeyVal['searchKey'], $searchKeyVal['searchValue']);
                 $this->consoleMessages->showOrganizationSearchResult($tickets);
+                break;
             } else {
                 $this->consoleMessages->invalidInput();
             }

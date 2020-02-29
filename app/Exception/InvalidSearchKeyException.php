@@ -7,5 +7,5 @@ use Exception;
 
 class InvalidSearchKeyException extends Exception
 {
-    protected $message = 'Unknown exception';
+    protected $message = 'Invalid search key! Please try again.';
 }

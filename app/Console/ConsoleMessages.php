@@ -174,7 +174,7 @@ class ConsoleMessages
     /**
      * Show ticket search result
      *
-     * @param $tickets
+     * @param $ticketList
      */
     public function showOrganizationSearchResult($ticketList)
     {

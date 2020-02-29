@@ -1,6 +1,5 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
-require __DIR__ . '/app/Helper/debug.php';
 
 use App\Console\Console;
 use App\Console\ConsoleMessages;
