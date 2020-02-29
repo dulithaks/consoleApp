@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Repository\OrganizationRepository;
 use App\Repository\TicketRepository;
 use App\Repository\UserRepository;
 
@@ -49,6 +50,7 @@ class Console
     {
         $userRepo = new UserRepository();
         $ticketRepo = new TicketRepository();
+        $organizationRepo = new OrganizationRepository();
 
         while (true) {
             $choice = trim(fgets(STDIN));
@@ -63,7 +65,9 @@ class Console
                 $this->consoleMessages->showTicketSearchResult($tickets);
                 break;
             } elseif (intval($choice) === 3) {
-
+                $searchKeyVal = $this->waitingForSearchKeyValueInput();
+                $tickets = $organizationRepo->getOrganizationInformation($searchKeyVal['searchKey'], $searchKeyVal['searchValue']);
+                $this->consoleMessages->showOrganizationSearchResult($tickets);
             } else {
                 $this->consoleMessages->invalidInput();
             }

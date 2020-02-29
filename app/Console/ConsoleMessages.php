@@ -170,4 +170,30 @@ class ConsoleMessages
             echo PHP_EOL . PHP_EOL;
         }
     }
+
+    /**
+     * Show ticket search result
+     *
+     * @param $tickets
+     */
+    public function showOrganizationSearchResult($ticketList)
+    {
+        foreach ($ticketList as $tickets) {
+            echo PHP_EOL . PHP_EOL;
+
+            $table = new ConsoleTable();
+            $table->setHeaders(["Ticket subject", "Users name"]);
+
+            foreach ($tickets as $ticket) {
+                $table->addRow([
+                    $ticket['subject'],
+                    $ticket['userName'],
+                ]);
+            }
+
+            $table->setPadding(2)->display();
+
+            echo PHP_EOL . PHP_EOL;
+        }
+    }
 }
