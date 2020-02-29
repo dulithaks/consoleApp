@@ -2,6 +2,7 @@
 
 namespace App\Console;
 
+use App\Repository\TicketRepository;
 use App\Repository\UserRepository;
 
 class Console
@@ -47,15 +48,19 @@ class Console
     public function waitingForSearchMenuInput()
     {
         $userRepo = new UserRepository();
+        $ticketRepo = new TicketRepository();
 
         while (true) {
             $choice = trim(fgets(STDIN));
             if (intval($choice) === 1) {
-
-            } elseif (intval($choice) === 2) {
                 $searchKeyVal = $this->waitingForSearchKeyValueInput();
                 $users = $userRepo->getUserInformation($searchKeyVal['searchKey'], $searchKeyVal['searchValue']);
                 $this->consoleMessages->showUserSearchResult($users);
+                break;
+            } elseif (intval($choice) === 2) {
+                $searchKeyVal = $this->waitingForSearchKeyValueInput();
+                $tickets = $ticketRepo->getTicketInformation($searchKeyVal['searchKey'], $searchKeyVal['searchValue']);
+                $this->consoleMessages->showTicketSearchResult($tickets);
                 break;
             } elseif (intval($choice) === 3) {
 

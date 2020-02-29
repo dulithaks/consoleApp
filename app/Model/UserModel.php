@@ -12,6 +12,15 @@ class UserModel extends Model
         $this->getDataFromFile('users.json');
     }
 
+    public function getUserNameById( $id) {
+        $user  = $this->findByKeyValue('_id', $id);
 
+        if($user){
+            return $user[0]['name'];
+        }
+        else {
+            return null;
+        }
+    }
 
 }

@@ -17,4 +17,5 @@ class AbstractRepository
         $this->organization = new OrganizationsModel();
     }
 
+
 }

@@ -12,5 +12,14 @@ class OrganizationsModel extends Model
         $this->getDataFromFile('organizations.json');
     }
 
+    public function getOrganizationNameById( $id) {
+        $organization  = $this->findByKeyValue('_id', $id);
 
+        if($organization){
+            return $organization[0]['name'];
+        }
+        else {
+            return null;
+        }
+    }
 }

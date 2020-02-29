@@ -94,8 +94,8 @@ class ConsoleMessages
         $organizationKeyList = (new OrganizationsModel())->getKeyList();
 
         $max = count($userKeyList);
-        $max = (count($ticketKeyList)>$max)?count($ticketKeyList) : $max;
-        $max = (count($organizationKeyList)>$max)?count($organizationKeyList) : $max;
+        $max = (count($ticketKeyList) > $max) ? count($ticketKeyList) : $max;
+        $max = (count($organizationKeyList) > $max) ? count($organizationKeyList) : $max;
 
         echo PHP_EOL . PHP_EOL;
 
@@ -112,11 +112,18 @@ class ConsoleMessages
         echo PHP_EOL . PHP_EOL;
     }
 
-    private function getSearchKey($array, $i) {
+    private function getSearchKey($array, $i)
+    {
         return (array_key_exists($i, $array)) ? $array[$i] : "";
     }
 
-    public function showUserSearchResult($users) {
+    /**
+     * Show user search result
+     *
+     * @param $users
+     */
+    public function showUserSearchResult($users)
+    {
         foreach ($users as $user) {
             echo PHP_EOL . PHP_EOL;
 
@@ -125,7 +132,7 @@ class ConsoleMessages
             $organizationName = (array)$user['organizationName'];
 
             $max = count($assigneeTicketSubjects);
-            $max = (count($submittedTicketSubject)>$max)?count($submittedTicketSubject) : $max;
+            $max = (count($submittedTicketSubject) > $max) ? count($submittedTicketSubject) : $max;
 
             $table = new ConsoleTable();
             $table->setHeaders(["Assignee ticket subject(s)", "Submitted ticket subject(s)", "Organization"]);
@@ -135,6 +142,29 @@ class ConsoleMessages
                     $this->getSearchKey($submittedTicketSubject, $i),
                     $this->getSearchKey($organizationName, $i)]);
             }
+            $table->setPadding(2)->display();
+
+            echo PHP_EOL . PHP_EOL;
+        }
+    }
+
+    /**
+     * Show ticket search result
+     *
+     * @param $tickets
+     */
+    public function showTicketSearchResult($tickets)
+    {
+        foreach ($tickets as $ticket) {
+            echo PHP_EOL . PHP_EOL;
+
+            $table = new ConsoleTable();
+            $table->setHeaders(["Assignee name", "Submitter name", "Organization name"]);
+            $table->addRow([
+                $ticket['submitterUserName'],
+                $ticket['assigneeUserName'],
+                $ticket['organizationName']
+            ]);
             $table->setPadding(2)->display();
 
             echo PHP_EOL . PHP_EOL;
