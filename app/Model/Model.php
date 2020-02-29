@@ -10,6 +10,8 @@ class Model
 
     protected $keyList = null;
 
+    private $arrayTypeSearch = ['domain_names', 'tags'];
+
 
     /**
      * Get data
@@ -28,22 +30,32 @@ class Model
      * @param $key
      * @param $value
      * @return mixed
+     * @throws InvalidSearchKeyException
      */
     public function findByKeyValue($key, $value)
     {
         $this->validateKey($key);
 
+        $items = [];
+
         foreach ($this->data as $item) {
-            if ($item[$key] == $value) {
-                return $item;
+            if(array_key_exists($key, $this->arrayTypeSearch) && in_array($value, $item[$key])){
+                $items[] = $item;
+            }
+            elseif ($item[$key] == $value) {
+                $items[] = $item;
             }
         }
+
+        return $items;
     }
 
     /**
      * Validate key
      *
      * @param $key
+     * @return bool
+     * @throws InvalidSearchKeyException
      */
     private function validateKey($key) {
         if(in_array($key, $this->keyList)){

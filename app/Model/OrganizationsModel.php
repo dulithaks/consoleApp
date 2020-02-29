@@ -9,7 +9,7 @@ class OrganizationsModel extends Model
 
     public function __construct()
     {
-        $this->getDataFromFile('users.json');
+        $this->getDataFromFile('organizations.json');
     }
 
 

@@ -95,4 +95,29 @@ class ConsoleMessages
     private function getSearchKey($array, $i) {
         return (array_key_exists($i, $array)) ? $array[$i] : "";
     }
+
+    public function showUserSearchResult($users) {
+        foreach ($users as $user) {
+            echo PHP_EOL . PHP_EOL;
+
+            $assigneeTicketSubjects = $user['assigneeTicketSubjects'];
+            $submittedTicketSubject = $user['submittedTicketSubjects'];
+            $organizationName = (array)$user['organizationName'];
+
+            $max = count($assigneeTicketSubjects);
+            $max = (count($submittedTicketSubject)>$max)?count($submittedTicketSubject) : $max;
+
+            $table = new ConsoleTable();
+            $table->setHeaders(["Assignee ticket subject(s)", "Submitted ticket subject(s)", "Organization"]);
+            for ($i = 0; $i < $max; $i++) {
+                $table->addRow([
+                    $this->getSearchKey($assigneeTicketSubjects, $i),
+                    $this->getSearchKey($submittedTicketSubject, $i),
+                    $this->getSearchKey($organizationName, $i)]);
+            }
+            $table->setPadding(2)->display();
+
+            echo PHP_EOL . PHP_EOL;
+        }
+    }
 }

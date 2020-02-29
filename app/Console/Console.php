@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Console;
+use App\Repository\UserRepository;
 
 class Console
 {
@@ -48,12 +49,15 @@ class Console
      */
     public function waitingForSearchMenuInput()
     {
+        $userRepo = new UserRepository();
+
         while (true) {
             $choice = trim(fgets(STDIN));
             if (intval($choice) === 1) {
 
             } elseif (intval($choice) === 2) {
-
+                $users = $userRepo->getUserInformation('_id', 1);
+                $this->consoleMessages->showUserSearchResult($users);
             } elseif (intval($choice) === 3) {
 
             } else {
