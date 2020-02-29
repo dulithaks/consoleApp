@@ -40,7 +40,7 @@ class Console
     }
 
     /**
-     * Initializing message
+     * Waiting for search menu input
      *
      * @return string
      */
@@ -53,7 +53,8 @@ class Console
             if (intval($choice) === 1) {
 
             } elseif (intval($choice) === 2) {
-                $users = $userRepo->getUserInformation('_id', 1);
+                $searchKeyVal = $this->waitingForSearchKeyValueInput();
+                $users = $userRepo->getUserInformation($searchKeyVal['searchKey'], $searchKeyVal['searchValue']);
                 $this->consoleMessages->showUserSearchResult($users);
                 break;
             } elseif (intval($choice) === 3) {
@@ -63,5 +64,23 @@ class Console
             }
             echo PHP_EOL . PHP_EOL;
         }
+    }
+
+    /**
+     * IWaiting for search value input
+     *
+     * @return array
+     */
+    public function waitingForSearchKeyValueInput()
+    {
+        $data = [];
+
+        $this->consoleMessages->showInputKeyText();
+        $data['searchKey'] = trim(fgets(STDIN));
+
+        $this->consoleMessages->showInputValueText();
+        $data['searchValue'] = trim(fgets(STDIN));
+
+        return $data;
     }
 }

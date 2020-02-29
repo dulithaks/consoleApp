@@ -65,6 +65,26 @@ class ConsoleMessages
     }
 
     /**
+     * Show error message
+     *
+     * @return string
+     */
+    public function showInputKeyText()
+    {
+        echo "Enter search term" . PHP_EOL;;
+    }
+
+    /**
+     * Show error message
+     *
+     * @return string
+     */
+    public function showInputValueText()
+    {
+        echo "Enter search value" . PHP_EOL;;
+    }
+
+    /**
      * Show searchable fields
      */
     public function showSearchableFields()
