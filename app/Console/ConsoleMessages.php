@@ -16,7 +16,7 @@ class ConsoleMessages
      */
     public function initMessage()
     {
-        echo PHP_EOL . "Type 'quit' to exit at any time, Press 'Enter' to continue" . PHP_EOL . PHP_EOL
+        echo PHP_EOL . "Type 'quit' to exit, Select option number and press 'Enter' to continue" . PHP_EOL . PHP_EOL
             . "Select search options:" . PHP_EOL
             . "Press 1 to search" . PHP_EOL
             . "Press 2 to view a list of searchable fields" . PHP_EOL
