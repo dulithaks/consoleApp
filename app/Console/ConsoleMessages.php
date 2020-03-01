@@ -124,28 +124,26 @@ class ConsoleMessages
      */
     public function showUserSearchResult($users)
     {
+        echo PHP_EOL;
+        $table = new ConsoleTable();
+        $table->setHeaders(["Assignee ticket subject(s)", "Submitted ticket subject(s)", "Organization"]);
         foreach ($users as $user) {
-            echo PHP_EOL . PHP_EOL;
-
             $assigneeTicketSubjects = $user['assigneeTicketSubjects'];
             $submittedTicketSubject = $user['submittedTicketSubjects'];
-            $organizationName = (array)$user['organizationName'];
+            $organizationName = $user['organizationName'];
 
             $max = count($assigneeTicketSubjects);
             $max = (count($submittedTicketSubject) > $max) ? count($submittedTicketSubject) : $max;
 
-            $table = new ConsoleTable();
-            $table->setHeaders(["Assignee ticket subject(s)", "Submitted ticket subject(s)", "Organization"]);
             for ($i = 0; $i < $max; $i++) {
                 $table->addRow([
                     $this->getSearchKey($assigneeTicketSubjects, $i),
                     $this->getSearchKey($submittedTicketSubject, $i),
-                    $this->getSearchKey($organizationName, $i)]);
+                    $organizationName]);
             }
-            $table->setPadding(2)->display();
-
-            echo PHP_EOL . PHP_EOL;
         }
+        $table->setPadding(2)->display();
+        echo PHP_EOL;
     }
 
     /**
@@ -155,20 +153,18 @@ class ConsoleMessages
      */
     public function showTicketSearchResult($tickets)
     {
+        echo PHP_EOL;
+        $table = new ConsoleTable();
+        $table->setHeaders(["Assignee name", "Submitter name", "Organization name"]);
         foreach ($tickets as $ticket) {
-            echo PHP_EOL . PHP_EOL;
-
-            $table = new ConsoleTable();
-            $table->setHeaders(["Assignee name", "Submitter name", "Organization name"]);
             $table->addRow([
                 $ticket['submitterUserName'],
                 $ticket['assigneeUserName'],
                 $ticket['organizationName']
             ]);
-            $table->setPadding(2)->display();
-
-            echo PHP_EOL . PHP_EOL;
         }
+        $table->setPadding(2)->display();
+        echo PHP_EOL;
     }
 
     /**
@@ -178,22 +174,18 @@ class ConsoleMessages
      */
     public function showOrganizationSearchResult($ticketList)
     {
+        echo PHP_EOL;
+        $table = new ConsoleTable();
+        $table->setHeaders(["Ticket subject", "Users name"]);
         foreach ($ticketList as $tickets) {
-            echo PHP_EOL . PHP_EOL;
-
-            $table = new ConsoleTable();
-            $table->setHeaders(["Ticket subject", "Users name"]);
-
             foreach ($tickets as $ticket) {
                 $table->addRow([
                     $ticket['subject'],
                     $ticket['userName'],
                 ]);
             }
-
-            $table->setPadding(2)->display();
-
-            echo PHP_EOL . PHP_EOL;
         }
+        $table->setPadding(2)->display();
+        echo PHP_EOL;
     }
 }

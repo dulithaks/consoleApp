@@ -21,6 +21,7 @@ Then follow the instructions.
 
 ### Assumptions
 - I asumene that organization's user name is that name associate with user's submitter_id.
+- The true/false search keys user has to input 0 or 1.
 
 ### Software versions 
 The software versions used;
