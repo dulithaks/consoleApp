@@ -6,6 +6,14 @@ namespace App\Repository;
 
 class TicketRepository extends AbstractRepository
 {
+    /**
+     * Get ticket information
+     *
+     * @param $key
+     * @param $value
+     * @return array
+     * @throws \App\Exception\InvalidSearchKeyException
+     */
     public function getTicketInformation($key, $value)
     {
         $tickets = $this->ticket->findByKeyValue($key, $value);

@@ -12,6 +12,13 @@ class UserModel extends Model
         $this->getDataFromFile('users.json');
     }
 
+    /**
+     * Get user name by id
+     *
+     * @param $id
+     * @return |null
+     * @throws \App\Exception\InvalidSearchKeyException
+     */
     public function getUserNameById( $id) {
         $user  = $this->findByKeyValue('_id', $id);
 

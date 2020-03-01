@@ -1,6 +1,5 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
-require __DIR__ . '/app/Helper/debug.php';
 
 use App\Console\Console;
 use App\Console\ConsoleMessages;
@@ -17,7 +16,7 @@ try {
     $consoleMessages->initMessage();
     $mainChoice = $console->showTopLevelMenu();
 
-
+    // View second level menu/ search keys
     if ($mainChoice == 'viewList') {
         $consoleMessages->showSearchableFields();
         $consoleMessages->showLevelTwoMenu();

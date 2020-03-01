@@ -6,6 +6,14 @@ namespace App\Repository;
 
 class OrganizationRepository extends AbstractRepository
 {
+    /**
+     * Get organization information
+     *
+     * @param $key
+     * @param $value
+     * @return array
+     * @throws \App\Exception\InvalidSearchKeyException
+     */
     public function getOrganizationInformation($key, $value)
     {
         $organizations = $this->organization->findByKeyValue($key, $value);
@@ -19,7 +27,13 @@ class OrganizationRepository extends AbstractRepository
         return $data;
     }
 
-
+    /**
+     * Get tickets with user name
+     *
+     * @param $organization
+     * @return array
+     * @throws \App\Exception\InvalidSearchKeyException
+     */
     private function getTicketsWithUserName($organization) {
         $tickets = $this->ticket->findByKeyValue('organization_id', $organization['_id']);
 
