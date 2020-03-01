@@ -2,8 +2,9 @@
 
 use App\Model\UserModel;
 use App\Repository\UserRepository;
+use PHPUnit\Framework\TestCase;
 
-class UserRepositoryTest extends \PHPUnit\Framework\TestCase
+class UserRepositoryTest extends TestCase
 {
     private $userRepo;
 
