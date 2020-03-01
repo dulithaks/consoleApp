@@ -26,4 +26,4 @@ The software versions used;
 - PHPUnit 9.0.1
 
 ### Todo
-- Empty result is displayed as empty table. It is better to show proper error message.
+- Empty result is displayed as empty table. It is better to show proper message.
