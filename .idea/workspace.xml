@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f537b8ea-645d-44a7-9650-4c5baebf0eb6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Console/ConsoleMessages.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Console/ConsoleMessages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repository/UserRepository.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Repository/UserRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
+            <state relative-caret-position="352">
+              <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -73,13 +72,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Model/data/users.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="380" column="26" selection-start-line="380" selection-start-column="23" selection-end-line="380" selection-end-column="26" />
+            <state relative-caret-position="-97">
+              <caret line="380" column="20" selection-start-line="380" selection-start-column="5" selection-end-line="380" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Model/data/organizations.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="498">
@@ -142,6 +141,7 @@
       <find>showUserSearchResult</find>
       <find>&quot;organization_id&quot;: 119,</find>
       <find>A Drama in Burundi</find>
+      <find>&quot;_id&quot;: 115,</find>
       <find>&quot;_id&quot;: 15,</find>
     </findStrings>
     <dirStrings>
@@ -175,7 +175,6 @@
         <option value="$PROJECT_DIR$/tests/StackTest.php" />
         <option value="$PROJECT_DIR$/tests/MyTests.php" />
         <option value="$PROJECT_DIR$/challenge.php" />
-        <option value="$PROJECT_DIR$/app/Repository/UserRepository.php" />
         <option value="$PROJECT_DIR$/tests/UserRepositoryTest.php" />
         <option value="$PROJECT_DIR$/tests/OrganizationRepositoryTest.php" />
         <option value="$PROJECT_DIR$/app/Repository/TicketRepository.php" />
@@ -183,6 +182,7 @@
         <option value="$PROJECT_DIR$/app/Console/Console.php" />
         <option value="$PROJECT_DIR$/app/Console/ConsoleMessages.php" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/app/Repository/UserRepository.php" />
       </list>
     </option>
   </component>
@@ -222,7 +222,7 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="66" />
     <option name="y" value="-12" />
     <option name="width" value="1750" />
@@ -346,12 +346,12 @@
       <workItem from="1582907538604" duration="9587000" />
       <workItem from="1582917318192" duration="10584000" />
       <workItem from="1582967846335" duration="24765000" />
-      <workItem from="1583061273639" duration="6875000" />
+      <workItem from="1583061273639" duration="8223000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51811000" />
+    <option name="totallyTimeSpent" value="53159000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -600,13 +600,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Repository/UserRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Console/ConsoleMessages.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -634,17 +627,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Model/data/users.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="380" column="26" selection-start-line="380" selection-start-column="23" selection-end-line="380" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Model/data/organizations.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="498">
           <caret line="313" column="12" lean-forward="true" selection-start-line="313" selection-start-column="12" selection-end-line="313" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Model/data/users.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-97">
+          <caret line="380" column="20" selection-start-line="380" selection-start-column="5" selection-end-line="380" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Repository/UserRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="53" column="22" selection-start-line="53" selection-start-column="22" selection-end-line="53" selection-end-column="22" />
         </state>
       </provider>
     </entry>

@@ -50,6 +50,10 @@ class UserRepository extends AbstractRepository
      * @throws \App\Exception\InvalidSearchKeyException
      */
     public function getOrganizationName($user){
+        if(!isset($user['organization_id'])){
+            return '';
+        }
+
         $organization = $this->organization->findByKeyValue('_id', $user['organization_id']);
         if(empty($organization)){
             return '';
