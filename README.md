@@ -17,7 +17,7 @@ Then follow the instructions.
 
 
 ### Assumptions
-- I assume that organization's user name is that name associate with user's submitter_id.
+- I assume that organization's user name is that name associate with tickets's submitter user.
 - The true/false search keys expect 0 or 1 as input. For the time being no validation is implemented.
 
 ### Software versions 
