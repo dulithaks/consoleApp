@@ -33,6 +33,7 @@ class Console
                 break;
             } elseif ($choice == 'quit') {
                 $this->consoleMessages->quitMessage();
+                exit;
             } else {
                 $this->consoleMessages->invalidInput();
             }
