@@ -6,7 +6,14 @@ namespace App\Repository;
 
 class UserRepository extends AbstractRepository
 {
-
+    /**
+     * Get user information
+     *
+     * @param $key
+     * @param $value
+     * @return array
+     * @throws \App\Exception\InvalidSearchKeyException
+     */
     public function getUserInformation($key, $value)
     {
         $users = $this->user->findByKeyValue($key, $value);

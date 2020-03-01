@@ -12,6 +12,13 @@ class OrganizationsModel extends Model
         $this->getDataFromFile('organizations.json');
     }
 
+    /**
+     * Get organization name by id
+     *
+     * @param $id
+     * @return |null
+     * @throws \App\Exception\InvalidSearchKeyException
+     */
     public function getOrganizationNameById( $id) {
         $organization  = $this->findByKeyValue('_id', $id);
 
