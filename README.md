@@ -7,12 +7,16 @@ I have used composer to keep packages. So please use below command to setup the 
 - ``composer install``
   
 
-### How to run
+### How to run application
 
 Please run below command inside the project folder to start the program. 
 Then follow the instructions.
 
 - ``php challenge.php``
+
+### How to run tests
+
+- ``vendor/bin/phpunit tests``
 
 
 ### Assumptions
@@ -20,4 +24,5 @@ Then follow the instructions.
 
 ### Software versions 
 The software versions used;
-- rwer
+- PHP 7.3.2
+- PHPUnit 9.0.1
